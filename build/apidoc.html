@@ -1,0 +1,459 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+    >gl-shader (v4.2.1)</a>
+</h1>
+<h4>WebGL shader wrapper</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gl-shader">module gl-shader</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.gl-shader">
+            function <span class="apidocSignatureSpan"></span>gl-shader
+            <span class="apidocSignatureSpan">( gl , vertSource , fragSource , uniforms , attributes)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.GLError">
+            function <span class="apidocSignatureSpan">gl-shader.</span>GLError
+            <span class="apidocSignatureSpan">(rawError, shortMessage, longMessage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gl-shader.</span>GLError.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gl-shader.</span>runtime_reflect</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gl-shader.</span>shader_cache</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gl-shader.GLError">module gl-shader.GLError</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.GLError.GLError">
+            function <span class="apidocSignatureSpan">gl-shader.</span>GLError
+            <span class="apidocSignatureSpan">(rawError, shortMessage, longMessage)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gl-shader.GLError.prototype">module gl-shader.GLError.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.GLError.prototype.constructor">
+            function <span class="apidocSignatureSpan">gl-shader.GLError.prototype.</span>constructor
+            <span class="apidocSignatureSpan">(rawError, shortMessage, longMessage)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">gl-shader.GLError.prototype.</span>name</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gl-shader.runtime_reflect">module gl-shader.runtime_reflect</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.runtime_reflect.attributes">
+            function <span class="apidocSignatureSpan">gl-shader.runtime_reflect.</span>attributes
+            <span class="apidocSignatureSpan">(gl, program)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.runtime_reflect.uniforms">
+            function <span class="apidocSignatureSpan">gl-shader.runtime_reflect.</span>uniforms
+            <span class="apidocSignatureSpan">(gl, program)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gl-shader.shader_cache">module gl-shader.shader_cache</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.shader_cache.program">
+            function <span class="apidocSignatureSpan">gl-shader.shader_cache.</span>program
+            <span class="apidocSignatureSpan">(gl, vref, fref, attribs, locations)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gl-shader.shader_cache.shader">
+            function <span class="apidocSignatureSpan">gl-shader.shader_cache.</span>shader
+            <span class="apidocSignatureSpan">(gl, type, src)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gl-shader" id="apidoc.module.gl-shader">module gl-shader</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.gl-shader" id="apidoc.element.gl-shader.gl-shader">
+        function <span class="apidocSignatureSpan"></span>gl-shader
+        <span class="apidocSignatureSpan">( gl , vertSource , fragSource , uniforms , attributes)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createShader( gl , vertSource , fragSource , uniforms , attributes) {
+
+  var shader = new Shader(gl)
+
+  shader.update(
+      vertSource
+    , fragSource
+    , uniforms
+    , attributes)
+
+  return shader
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.GLError" id="apidoc.element.gl-shader.GLError">
+        function <span class="apidocSignatureSpan">gl-shader.</span>GLError
+        <span class="apidocSignatureSpan">(rawError, shortMessage, longMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GLError(rawError, shortMessage, longMessage) {
+    this.shortMessage = shortMessage || &#x27;&#x27;
+    this.longMessage = longMessage || &#x27;&#x27;
+    this.rawError = rawError || &#x27;&#x27;
+    this.message =
+      &#x27;gl-shader: &#x27; + (shortMessage || rawError || &#x27;&#x27;) +
+      (longMessage ? &#x27;\n&#x27;+longMessage : &#x27;&#x27;)
+    this.stack = (new Error()).stack
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gl-shader.GLError" id="apidoc.module.gl-shader.GLError">module gl-shader.GLError</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.GLError.GLError" id="apidoc.element.gl-shader.GLError.GLError">
+        function <span class="apidocSignatureSpan">gl-shader.</span>GLError
+        <span class="apidocSignatureSpan">(rawError, shortMessage, longMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GLError(rawError, shortMessage, longMessage) {
+    this.shortMessage = shortMessage || &#x27;&#x27;
+    this.longMessage = longMessage || &#x27;&#x27;
+    this.rawError = rawError || &#x27;&#x27;
+    this.message =
+      &#x27;gl-shader: &#x27; + (shortMessage || rawError || &#x27;&#x27;) +
+      (longMessage ? &#x27;\n&#x27;+longMessage : &#x27;&#x27;)
+    this.stack = (new Error()).stack
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gl-shader.GLError.prototype" id="apidoc.module.gl-shader.GLError.prototype">module gl-shader.GLError.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.GLError.prototype.constructor" id="apidoc.element.gl-shader.GLError.prototype.constructor">
+        function <span class="apidocSignatureSpan">gl-shader.GLError.prototype.</span>constructor
+        <span class="apidocSignatureSpan">(rawError, shortMessage, longMessage)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GLError(rawError, shortMessage, longMessage) {
+    this.shortMessage = shortMessage || &#x27;&#x27;
+    this.longMessage = longMessage || &#x27;&#x27;
+    this.rawError = rawError || &#x27;&#x27;
+    this.message =
+      &#x27;gl-shader: &#x27; + (shortMessage || rawError || &#x27;&#x27;) +
+      (longMessage ? &#x27;\n&#x27;+longMessage : &#x27;&#x27;)
+    this.stack = (new Error()).stack
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gl-shader.runtime_reflect" id="apidoc.module.gl-shader.runtime_reflect">module gl-shader.runtime_reflect</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.runtime_reflect.attributes" id="apidoc.element.gl-shader.runtime_reflect.attributes">
+        function <span class="apidocSignatureSpan">gl-shader.runtime_reflect.</span>attributes
+        <span class="apidocSignatureSpan">(gl, program)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runtimeAttributes(gl, program) {
+  var numAttributes = gl.getProgramParameter(program, gl.ACTIVE_ATTRIBUTES)
+  var result = []
+  for(var i=0; i&#x3c;numAttributes; ++i) {
+    var info = gl.getActiveAttrib(program, i)
+    if(info) {
+      result.push({
+        name: info.name,
+        type: getType(gl, info.type)
+      })
+    }
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  if(!gl.getProgramParameter(testProgram, gl.LINK_STATUS)) {
+    var errLog = gl.getProgramInfoLog(testProgram)
+    throw new GLError(errLog, &#x27;Error linking program:&#x27; + errLog)
+  }
+
+  //Load data from runtime
+  uniforms   = uniforms   || runtime.uniforms(gl, testProgram)
+  attributes = attributes || runtime.<span class="apidocCodeKeywordSpan">attributes</span>(gl, testProgram)
+
+  //Release test program
+  gl.deleteProgram(testProgram)
+}
+
+//Sort attributes lexicographically
+// overrides undefined WebGL behavior for attribute locations
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.runtime_reflect.uniforms" id="apidoc.element.gl-shader.runtime_reflect.uniforms">
+        function <span class="apidocSignatureSpan">gl-shader.runtime_reflect.</span>uniforms
+        <span class="apidocSignatureSpan">(gl, program)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function runtimeUniforms(gl, program) {
+  var numUniforms = gl.getProgramParameter(program, gl.ACTIVE_UNIFORMS)
+  var result = []
+  for(var i=0; i&#x3c;numUniforms; ++i) {
+    var info = gl.getActiveUniform(program, i)
+    if(info) {
+      var type = getType(gl, info.type)
+      if(info.size &#x3e; 1) {
+        for(var j=0; j&#x3c;info.size; ++j) {
+          result.push({
+            name: info.name.replace(&#x27;[0]&#x27;, &#x27;[&#x27; + j + &#x27;]&#x27;),
+            type: type
+          })
+        }
+      } else {
+        result.push({
+          name: info.name,
+          type: type
+        })
+      }
+    }
+  }
+  return result
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  gl.linkProgram(testProgram)
+  if(!gl.getProgramParameter(testProgram, gl.LINK_STATUS)) {
+    var errLog = gl.getProgramInfoLog(testProgram)
+    throw new GLError(errLog, &#x27;Error linking program:&#x27; + errLog)
+  }
+
+  //Load data from runtime
+  uniforms   = uniforms   || runtime.<span class="apidocCodeKeywordSpan">uniforms</span>(gl, testProgram)
+  attributes = attributes || runtime.attributes(gl, testProgram)
+
+  //Release test program
+  gl.deleteProgram(testProgram)
+}
+
+//Sort attributes lexicographically
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gl-shader.shader_cache" id="apidoc.module.gl-shader.shader_cache">module gl-shader.shader_cache</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.shader_cache.program" id="apidoc.element.gl-shader.shader_cache.program">
+        function <span class="apidocSignatureSpan">gl-shader.shader_cache.</span>program
+        <span class="apidocSignatureSpan">(gl, vref, fref, attribs, locations)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function createProgram(gl, vref, fref, attribs, locations) {
+  return getCache(gl).getProgram(vref, fref, attribs, locations)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  attributeLocations[i] = curLocation
+}
+  }
+
+  //Rebuild program and recompute all uniform locations
+  var uniformLocations = new Array(uniforms.length)
+  function relink() {
+wrapper.program = shaderCache.<span class="apidocCodeKeywordSpan">program</span>(
+    gl
+  , wrapper._vref
+  , wrapper._fref
+  , attributeNames
+  , attributeLocations)
+
+for(var i=0; i&#x3c;uniforms.length; ++i) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gl-shader.shader_cache.shader" id="apidoc.element.gl-shader.shader_cache.shader">
+        function <span class="apidocSignatureSpan">gl-shader.shader_cache.</span>shader
+        <span class="apidocSignatureSpan">(gl, type, src)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getShaderReference(gl, type, src) {
+  return getCache(gl).getShaderReference(type, src)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+var wrapper = this
+var gl      = wrapper.gl
+
+//Compile vertex and fragment shaders
+var pvref = wrapper._vref
+wrapper._vref = shaderCache.<span class="apidocCodeKeywordSpan">shader</span>(gl, gl.VERTEX_SHADER, vertSource)
+if(pvref) {
+  pvref.dispose()
+}
+wrapper.vertShader = wrapper._vref.shader
+var pfref = this._fref
+wrapper._fref = shaderCache.shader(gl, gl.FRAGMENT_SHADER, fragSource)
+if(pfref) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
